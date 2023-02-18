@@ -27,7 +27,7 @@ def test_go_to_stuffing(driver):
     check = driver.find_element(By.XPATH, "//span[text()='Начинки']/parent::div").get_attribute("class") # поиск по узлу-родителю
     assert 'tab_tab_type_current__2BEPc' in check
 
-def test_go_to_buns(driver): # если тест не запускается, просьба прислать текст ошибки - у меня проходит
+def test_go_to_buns(driver):
     driver.find_element(By.XPATH, config.login_button).click()
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, config.form_email)))
     driver.find_element(By.XPATH, config.form_email).send_keys(config.email)
